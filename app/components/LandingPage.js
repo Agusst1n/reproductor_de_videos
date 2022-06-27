@@ -4,14 +4,16 @@ const LandingPage = (video) => {
     console.log(e.target.dataset.id, 'landing')
     if (!e.target.matches(".enlace")) return false;
     localStorage.setItem("urlId", e.target.dataset.id);
+    //guartdando en el localstorage la id del video clickeado
   });
 
   const div = document.createElement("div"); //contendor de los videos
   div.classList.add("Landing");
 
+  //iterando el array de objetos mientras creo los respectivos elementos
+
   for (let i = 0; i < video.length; i++) {
     console.log(video, 'data')
-    // let play_icon = document.querySelector('.play_icon')
 
     let video_home = document.createElement("div");
     video_home.className = 'video_home'
@@ -21,7 +23,6 @@ const LandingPage = (video) => {
 
     let video_play = document.createElement('video')
     video_play.className = 'enlace video_enlace'
-    // video_play.className = 'video_enlace'
 
     video_play.src = `${video[i].urlMedia}`
     video_play.dataset.id = `${video[i].id}`
@@ -67,9 +68,6 @@ const LandingPage = (video) => {
 
     video_title.appendChild(icon_contain)
     video_title.appendChild(video_info)
-    // video_title.appendChild(title_channel)
-    // video_title.appendChild(name_channel)
-    // video_title.appendChild(views)
 
 
     let miniature = document.createElement('img')
@@ -80,17 +78,15 @@ const LandingPage = (video) => {
 
     a.dataset.id = `${video[i].id}`
     a.setAttribute("href", `#/${video[i].slug}`)
-    // a.appendChild(img)
+ 
     a.appendChild(miniature)
     a.appendChild(video_play)
     a.appendChild(play_icon)
     a.appendChild(video_title)
 
-    // a.appendChild(video_description)
 
 
     video_home.appendChild(a)
-    // video_home.appendChild(video_description)
     div.appendChild(video_home)
 
 

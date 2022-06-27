@@ -21,7 +21,7 @@ const Video = (video) => {
   
 
   /***
-   * buttons
+   * buttons 
    */
   let button_play = document.createElement('button')
   button_play.innerHTML = `<ion-icon name="pause"></ion-icon>`
@@ -137,6 +137,7 @@ const Video = (video) => {
   let deslike = document.createElement('div')
   deslike.className = 'deslike'
 
+  
   let deslikeNumber = document.createElement('p')
   deslikeNumber.textContent = `DESLIKE`
   deslikeNumber.className = 'deslikeNumber'
@@ -224,6 +225,17 @@ const Video = (video) => {
     }
   }
 
+  volumen.onclick = ()=>{
+    if(video_reproducido.muted){
+      video_reproducido.muted = false
+      volumen.innerHTML = `<ion-icon name="volume-high"></ion-icon>`
+    }
+    else{
+      video_reproducido.muted = true
+      volumen.innerHTML = `<ion-icon name="volume-mute-outline"></ion-icon>`
+    }
+  }
+
 
   like_button.onclick = ()=>{
     like_button.classList.toggle('active')
@@ -245,6 +257,8 @@ const Video = (video) => {
         video_buttons.classList.toggle('active')
     }
   }
+
+  //agregando al div padre
     
 
   div.appendChild(video_buttons)

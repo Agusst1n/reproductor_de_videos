@@ -23,24 +23,19 @@ body::-webkit-scrollbar{
 /* ===========================================*/
 
 .header {
-  position: sticky;
-  height: 70px;
+  position: fixed;
+  height: 45px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  /* border: 5px solid red;
-  text-align: center;
-  font-size: 32px;
-  top: 0;*/
-  /* background-color: #201537;  */
+  justify-content: flex-start;
   background-color: #0b0716;
-  z-index: 1;
+  z-index: 10;
 }
 .header_logo{
   width: 10%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: rebeccapurple;
 }
@@ -373,6 +368,8 @@ video {
 #play, #fullScreen , #forwardSeconds , #backwardSeconds , #volumen ion-icon{
   color: #32166e;
   font-size: 2rem;
+  background: transparent;
+  border: none;
 }
 
 .play_icon{
@@ -422,61 +419,55 @@ video {
 /*================NAVBAR=======================*/
 /* ===========================================*/
 
-/* .Navbar{
-  position:fixed;
-  height:100vh;
-  top:0;
-  left:-100%;
-  width:20%;
-  background-color:white;
-  transition: linear .5s ;
-}
-
-.Navbar.active{
-  left:0%;
-}
-
-.nav_logo{
-  height:10%;
-  width:100%;
-  border-bottom:2px solid black;
-}
-
-.nav_links{
-  height:90%;
-  width:100%;
-}
-.menu_icon{
-  width:50%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items: center;
-}
-.logo{
-  width:50%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items: center;
-}
-.menu_icon ion-icon{
-  font-size: 2rem;
-}
- */
 
 
-/* ===========================================*/
-/*================AUDIO=======================*/
-/* ===========================================*/
 
- .audioRepro{
-  /* position: fixed;
-  bottom: 0; */
+/*===============*/
+/*=====VOLUME=======*/
+.audioRepro{
+  position: fixed;
+  left: 0%;
+  bottom: -10%;
   width: 100%;
   height: 80px;
-  outline: 1px solid yellow;
+  outline: 1px solid rgb(71, 1, 151);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: linear .2s;
+  /* background-color: #0b07163d; */
+  backdrop-filter: blur(10px);
  }
+ .audioRepro:hover{
+  bottom: 0%;
+  transition: linear .2s;
+ }
+
+.controlVolume{
+  height: 20px;
+  bottom: 90px;
+  accent-color: rgb(71, 1, 151);
+}
+
+#audio{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+
+
+
+
+
+
+
+/* ===========================================*/
+/*===============MEDIAS=======================*/
+/* ===========================================*/
+
+
 
 
 @media (max-width: 987px){
@@ -516,13 +507,6 @@ video {
   }
 
   .title_viewes{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-    width: 50%;
-    outline: 1px solid blue; */
     font-size: 1.6rem;
   }
 
@@ -592,7 +576,16 @@ video {
     width: 54px;
     height: 54px;
   }
-  
+  .audioRepro{
+    position: fixed;
+    bottom: 0%;
+    height: 100px;
+   }
+  .header{
+    height: 70px;
+  }
 }
 
 /*outline*/
+
+

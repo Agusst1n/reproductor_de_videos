@@ -1,5 +1,7 @@
 const OthersVideos = (video) => {
   const div = document.createElement("div");
+
+  //recibo array de objetos y los mapeo (son los videos que aparecen a la derecha  cuando esta viendo un video)
   div.className = 'other_vids'
   div.innerHTML = video
     .map((obj) => {

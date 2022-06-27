@@ -3,6 +3,8 @@ import LandingPage from "./LandingPage.js";
 import OthersVideos from "./OthersVideos.js";
 import Video from "./Video.js";
 
+import Audio from "./Audio.js";
+
 const Router = async () => {
   const $main = document.getElementById("main");
   let { hash } = window.location;
@@ -33,11 +35,11 @@ const Router = async () => {
         console.log(newvideo);
         console.log(newothervideos);
 
-        const $audioRepro = document.createElement("div");
-        $audioRepro.classList.add("audioRepro");
+        // const $audioRepro = document.createElement("div");
+        // $audioRepro.classList.add("audioRepro");
 
         $main.appendChild($div);
-        $main.appendChild($audioRepro);
+        $main.appendChild(Audio());
       }
     });
   }
